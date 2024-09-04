@@ -18,13 +18,12 @@ peliculas_populares = [
     "12 Hombres en Pugna"
 ]
 
-# Crear el formulario para seleccionar las películas
 with st.form("formulario_peliculas"):
     st.write("Seleccione 3 películas")
     pelicula1 = st.selectbox("Pelicula 1", peliculas_populares)
     pelicula2 = st.selectbox("Pelicula 2", peliculas_populares)
     pelicula3 = st.selectbox("Pelicula 3", peliculas_populares)
-    # Botón para enviar el formulario
+    # boton mas facil que en nuxt
     submitted = st.form_submit_button("Enviar")
 
 if submitted:
@@ -47,4 +46,3 @@ if submitted:
     st.write(response.text)
 
 
-    
