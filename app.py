@@ -45,3 +45,6 @@ if submitted:
 
     response = model.generate_content(f"Quiero hasta 3 recomendaciones de pelicula en base a estas 3 peliculas {pelicula1},{pelicula2},{pelicula3}")
     st.write(response.text)
+
+
+    
