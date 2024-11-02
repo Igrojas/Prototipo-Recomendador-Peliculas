@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-
+import json
 # un formulario, donde se ingresan las peliculas
 # Estas peliculas son guardadas en una variable
 
@@ -33,7 +33,8 @@ if st.button("enviar"):
             "https://www.googleapis.com/auth/drive.file", 
             "https://www.googleapis.com/auth/drive"]
 
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(st.secrets["GOOGLE_APPLICATION_CREDENTIALS"]))
+
     client = gspread.authorize(credentials)
 
     # Abrir la hoja de cálculo usando su URL
