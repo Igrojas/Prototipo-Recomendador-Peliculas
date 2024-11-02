@@ -25,3 +25,35 @@ if st.button("enviar"):
 
 
 
+    # import os
+    # from dotenv import load_dotenv
+    # import gspread
+    # from oauth2client.service_account import ServiceAccountCredentials
+
+    # print(f"Agregando recomendaciones a excel")
+
+    # # Configuración para autenticación y acceso a Google Sheets
+    # scope = ["https://spreadsheets.google.com/feeds", 
+    #         "https://www.googleapis.com/auth/spreadsheets", 
+    #         "https://www.googleapis.com/auth/drive.file", 
+    #         "https://www.googleapis.com/auth/drive"]
+
+    # credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+    # client = gspread.authorize(credentials)
+
+    # # Abrir la hoja de cálculo usando su URL
+    # spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1T2H33PS-I0g0PhQyYblMrYcc8K3FSLbEkonV0VDYfwI/edit?usp=sharing'
+
+    # spreadsheet = client.open_by_url(spreadsheet_url)
+
+    # # --------------------------------------------------------- #
+    # worksheet_entrada = spreadsheet.worksheet("Nuevo Ingreso")
+
+    # pelicula_1 = pelicula1
+    # pelicula_2 = pelicula2
+    # pelicula_3 = pelicula3
+
+
+    # # Insertar datos en una nueva fila
+    # new_row = [mail, pelicula_1, pelicula_2, pelicula_3]
+    # worksheet_entrada.append_row(new_row)
