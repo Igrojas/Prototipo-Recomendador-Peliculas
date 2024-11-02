@@ -23,20 +23,20 @@ if st.button("enviar"):
     st.write(pelicula2)
     st.write(pelicula3)
 
+    # Obtén el diccionario de credenciales desde Streamlit secrets
     credentials_dict = st.secrets["gcp_service_account"]
 
-
-    print(f"Agregando recomendaciones a excel")
-
-    # Configuración para autenticación y acceso a Google Sheets
-    scope = ["https://spreadsheets.google.com/feeds", 
-            "https://www.googleapis.com/auth/spreadsheets", 
-            "https://www.googleapis.com/auth/drive.file", 
+    # Define el alcance
+    scope = ["https://spreadsheets.google.com/feeds",
+            "https://www.googleapis.com/auth/spreadsheets",
+            "https://www.googleapis.com/auth/drive.file",
             "https://www.googleapis.com/auth/drive"]
 
-    # credentials = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(st.secrets["GOOGLE_APPLICATION_CREDENTIALS"]))
+    # Crea las credenciales utilizando el diccionario y el alcance
+    credentials = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
 
-    client = gspread.authorize(credentials_dict)
+    # Autenticación con gspread usando las credenciales
+    client = gspread.authorize(credentials)
 
     # Abrir la hoja de cálculo usando su URL
     spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1T2H33PS-I0g0PhQyYblMrYcc8K3FSLbEkonV0VDYfwI/edit?usp=sharing'
