@@ -23,8 +23,10 @@ if st.button("enviar"):
     st.write(pelicula2)
     st.write(pelicula3)
 
-    creds = st.secrets["GOOGLE_APPLICATION_CREDENTIALS"]
-    print(creds)
+    credentials_dict = st.secrets["gcp_service_account"]
+
+    # Usar las credenciales
+    print(credentials_dict["project_id"])
 
     # print(f"Agregando recomendaciones a excel")
 
