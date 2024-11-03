@@ -7,8 +7,10 @@ import json
 # un formulario, donde se ingresan las peliculas
 # Estas peliculas son guardadas en una variable
 
+contenedor = st.container()
+contenedor.image("Imagenes/WEEKLUXE.jpg", width=300)
 
-st.image("Imagenes/WEEKLUXE.jpg", width=300)
+
 st.title("Ingresar 3 películas")
 
 pelicula1 = st.text_input("Nombre película 1")
