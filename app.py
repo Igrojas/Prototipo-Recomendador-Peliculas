@@ -13,7 +13,7 @@ pelicula1 = st.text_input("Nombre película 1")
 pelicula2 = st.text_input("Nombre película 2")
 pelicula3 = st.text_input("Nombre película 3")
 
-mail = st.text_input("Ingrese correo donde recibira las recomendaciones")
+mail = st.text_input("Ingrese correo donde recibirá las recomendaciones")
 
 
 if st.button("enviar"):
