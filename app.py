@@ -8,7 +8,7 @@ import json
 # Estas peliculas son guardadas en una variable
 
 
-st.image("Imagenes/WEEKLUXE.jpg", width=2)
+st.image("Imagenes/WEEKLUXE.jpg", width=400)
 st.title("Ingresar 3 películas")
 
 pelicula1 = st.text_input("Nombre película 1")
