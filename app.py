@@ -7,8 +7,8 @@ import json
 # un formulario, donde se ingresan las peliculas
 # Estas peliculas son guardadas en una variable
 
-contenedor = st.container()
-contenedor.image("Imagenes/WEEKLUXE.jpg", width=300)
+
+st.image("Imagenes/WEEKLUXE.jpg", width=300)
 
 
 st.title("Ingresar 3 películas")
@@ -48,7 +48,7 @@ if st.button("enviar"):
     spreadsheet = client.open_by_url(spreadsheet_url)
 
     # --------------------------------------------------------- #
-    worksheet_entrada = spreadsheet.worksheet("Entradas - ST")
+    worksheet_entrada = spreadsheet.worksheet("Entrada - ST")
 
     pelicula_1 = pelicula1
     pelicula_2 = pelicula2
