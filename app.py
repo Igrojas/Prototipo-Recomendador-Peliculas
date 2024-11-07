@@ -37,6 +37,17 @@ with st.form("formulario"):
     # Botón enviar
     enviado = st.form_submit_button("Enviar")
 
+
+if enviado:
+    # Limpiar campos de texto
+    st.write("Películas ingresadas")
+    # Volver a crear el formulario con valores vacíos
+    with st.form("formulario"):
+        st.text_input("Nombre película 1", value="", key="p1")
+        st.text_input("Nombre película 2", value="", key="p2")
+        st.text_input("Nombre película 3", value="", key="p3")
+        st.text_input("Ingrese correo donde recibirá las recomendaciones", value="", key="email")
+        
 #     # Obtén el diccionario de credenciales desde Streamlit secrets
 #     credentials_dict = st.secrets["gcp_service_account"]
 
