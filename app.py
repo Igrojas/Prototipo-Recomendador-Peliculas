@@ -29,20 +29,26 @@ st.image("Imagenes/WEEKLUXE.jpg", width=300)
 
 st.title("Ingresar 3 películas")
 
+# Define form for input
 with st.form("formulario"):
     pelicula1 = st.text_input("Nombre película 1", key="p1")
     pelicula2 = st.text_input("Nombre película 2", key="p2")
     pelicula3 = st.text_input("Nombre película 3", key="p3")
     mail = st.text_input("Ingrese correo", key="email")
     
+    # Submit button
     enviado = st.form_submit_button("Enviar")
 
+# Display results if form is submitted
 if enviado:
-    st.write("Películas ingresadas")
-    pelicula1 = st.text_input("Nombre película 1", value="", key="p1")
-    pelicula2 = st.text_input("Nombre película 2", value="", key="p2")
-    pelicula3 = st.text_input("Nombre película 3", value="", key="p3")
-    mail = st.text_input("Ingrese correo", value="", key="email")
+    st.write("Películas ingresadas:")
+    st.write(f"Película 1: {pelicula1}")
+    st.write(f"Película 2: {pelicula2}")
+    st.write(f"Película 3: {pelicula3}")
+    st.write(f"Correo: {mail}")
+
+    # Clear fields by reloading the form (Streamlit does not support direct field clearing)
+    st.experimental_rerun()
 
 #     # Obtén el diccionario de credenciales desde Streamlit secrets
 #     credentials_dict = st.secrets["gcp_service_account"]
