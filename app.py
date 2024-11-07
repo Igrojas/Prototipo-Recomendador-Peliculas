@@ -11,21 +11,31 @@ import json
 st.image("Imagenes/WEEKLUXE.jpg", width=300)
 
 
-st.title("Ingresar 3 películas")
+# st.title("Ingresar 3 películas")
 
-pelicula1 = st.text_input("Nombre película 1")
-pelicula2 = st.text_input("Nombre película 2")
-pelicula3 = st.text_input("Nombre película 3")
+# pelicula1 = st.text_input("Nombre película 1")
+# pelicula2 = st.text_input("Nombre película 2")
+# pelicula3 = st.text_input("Nombre película 3")
 
-mail = st.text_input("Ingrese correo donde recibirá las recomendaciones")
+# mail = st.text_input("Ingrese correo donde recibirá las recomendaciones")
 
 
-if st.button("enviar"):
-    st.write("Películas Ingresadas")
+# if st.button("enviar"):
+#     st.write("Películas Ingresadas")
 
-    st.write(pelicula1)
-    st.write(pelicula2)
-    st.write(pelicula3)
+#     st.write(pelicula1)
+#     st.write(pelicula2)
+#     st.write(pelicula3)
+
+# Crear formulario
+with st.form("formulario"):
+    pelicula1 = st.text_input("Nombre película 1")
+    pelicula2 = st.text_input("Nombre película 2")
+    pelicula3 = st.text_input("Nombre película 3")
+    mail = st.text_input("Ingrese correo donde recibirá las recomendaciones")
+    
+    # Botón enviar
+    enviado = st.form_submit_button("Enviar")
 
 #     # Obtén el diccionario de credenciales desde Streamlit secrets
 #     credentials_dict = st.secrets["gcp_service_account"]
