@@ -39,16 +39,16 @@ with st.form("formulario"):
     # Submit button
     enviado = st.form_submit_button("Enviar")
 
-# Display results if form is submitted
-if enviado:
-    st.write("Películas ingresadas:")
-    st.write(f"Película 1: {pelicula1}")
-    st.write(f"Película 2: {pelicula2}")
-    st.write(f"Película 3: {pelicula3}")
-    st.write(f"Correo: {mail}")
+# # Display results if form is submitted
+# if enviado:
+#     st.write("Películas ingresadas:")
+#     st.write(f"Película 1: {pelicula1}")
+#     st.write(f"Película 2: {pelicula2}")
+#     st.write(f"Película 3: {pelicula3}")
+#     st.write(f"Correo: {mail}")
 
-    # Clear fields by reloading the form (Streamlit does not support direct field clearing)
-    st.experimental_rerun()
+# Clear fields by reloading the form (Streamlit does not support direct field clearing)
+st.experimental_rerun()
 
 #     # Obtén el diccionario de credenciales desde Streamlit secrets
 #     credentials_dict = st.secrets["gcp_service_account"]
