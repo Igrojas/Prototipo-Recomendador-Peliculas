@@ -32,7 +32,7 @@ st.title("Ingresar 3 películas")
 # Función para restablecer los valores de los campos
 
 # Crear formulario para ingresar datos
-with st.form("formulario"):
+with st.form("formulario", clear_on_submit = True):
     pelicula1 = st.text_input("Nombre película 1", key="p1")
     pelicula2 = st.text_input("Nombre película 2", key="p2")
     pelicula3 = st.text_input("Nombre película 3", key="p3")
@@ -49,11 +49,11 @@ if enviado:
     st.write(f"Película 3: {pelicula3}")
     st.write(f"Correo: {mail}")
 
-# Botón de limpiar
-if st.button("Limpiar todo"):
-    pelicula1 = ""
-    pelicula2 = ""
-    pelicula3 = ""
+# # Botón de limpiar
+# if st.button("Limpiar todo"):
+#     pelicula1 = ""
+#     pelicula2 = ""
+#     pelicula3 = ""
 
 #     # Obtén el diccionario de credenciales desde Streamlit secrets
 #     credentials_dict = st.secrets["gcp_service_account"]
