@@ -33,34 +33,34 @@ if enviado:
         st.text_input("Nombre película 3", value="", key="p3")
         st.text_input("Ingrese correo donde recibirá las recomendaciones", value="", key="email")
 
-# # Obtén el diccionario de credenciales desde Streamlit secrets
-# credentials_dict = st.secrets["gcp_service_account"]
+# Obtén el diccionario de credenciales desde Streamlit secrets
+credentials_dict = st.secrets["gcp_service_account"]
 
-# # Define el alcance
-# scope = ["https://spreadsheets.google.com/feeds",
-#         "https://www.googleapis.com/auth/spreadsheets",
-#         "https://www.googleapis.com/auth/drive.file",
-#         "https://www.googleapis.com/auth/drive"]
+# Define el alcance
+scope = ["https://spreadsheets.google.com/feeds",
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive.file",
+        "https://www.googleapis.com/auth/drive"]
 
-# # Crea las credenciales utilizando el diccionario y el alcance
-# credentials = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
+# Crea las credenciales utilizando el diccionario y el alcance
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
 
-# # Autenticación con gspread usando las credenciales
-# client = gspread.authorize(credentials)
+# Autenticación con gspread usando las credenciales
+client = gspread.authorize(credentials)
 
-# # Abrir la hoja de cálculo usando su URL
-# spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1T2H33PS-I0g0PhQyYblMrYcc8K3FSLbEkonV0VDYfwI/edit?usp=sharing'
+# Abrir la hoja de cálculo usando su URL
+spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1T2H33PS-I0g0PhQyYblMrYcc8K3FSLbEkonV0VDYfwI/edit?usp=sharing'
 
-# spreadsheet = client.open_by_url(spreadsheet_url)
+spreadsheet = client.open_by_url(spreadsheet_url)
 
-# # --------------------------------------------------------- #
-# worksheet_entrada = spreadsheet.worksheet("Entrada - ST")
+# --------------------------------------------------------- #
+worksheet_entrada = spreadsheet.worksheet("Entrada - ST")
 
-# pelicula_1 = pelicula1
-# pelicula_2 = pelicula2
-# pelicula_3 = pelicula3
+pelicula_1 = pelicula1
+pelicula_2 = pelicula2
+pelicula_3 = pelicula3
 
 
-# # Insertar datos en una nueva fila
-# new_row = [pelicula_1, pelicula_2, pelicula_3, mail]
-# worksheet_entrada.append_row(new_row)
+# Insertar datos en una nueva fila
+new_row = [pelicula_1, pelicula_2, pelicula_3, mail]
+worksheet_entrada.append_row(new_row)
