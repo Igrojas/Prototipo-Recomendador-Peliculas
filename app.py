@@ -30,11 +30,6 @@ st.image("Imagenes/WEEKLUXE.jpg", width=300)
 st.title("Ingresar 3 películas")
 
 # Función para restablecer los valores de los campos
-def reset_fields():
-    st.session_state["p1"] = ""
-    st.session_state["p2"] = ""
-    st.session_state["p3"] = ""
-    st.session_state["email"] = ""
 
 # Crear formulario para ingresar datos
 with st.form("formulario"):
@@ -56,7 +51,9 @@ if enviado:
 
 # Botón de limpiar
 if st.button("Limpiar todo"):
-    reset_fields()
+    pelicula1 = ""
+    pelicula2 = ""
+    pelicula3 = ""
 
 #     # Obtén el diccionario de credenciales desde Streamlit secrets
 #     credentials_dict = st.secrets["gcp_service_account"]
