@@ -46,7 +46,7 @@ with st.form("formulario"):
     # Botón de envío
     enviado = st.form_submit_button("Enviar")
 
-# Mostrar resultados y limpiar campos si se hace clic en "Enviar"
+# Mostrar resultados si se hace clic en "Enviar"
 if enviado:
     st.write("Películas ingresadas:")
     st.write(f"Película 1: {pelicula1}")
