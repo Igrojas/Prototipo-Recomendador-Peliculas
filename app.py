@@ -43,17 +43,7 @@ with st.form("formulario", clear_on_submit = True):
 
 # Mostrar resultados si se hace clic en "Enviar"
 if enviado:
-    st.write("Películas ingresadas:")
-    st.write(f"Película 1: {pelicula1}")
-    st.write(f"Película 2: {pelicula2}")
-    st.write(f"Película 3: {pelicula3}")
-    st.write(f"Correo: {mail}")
-
-# # Botón de limpiar
-# if st.button("Limpiar todo"):
-#     pelicula1 = ""
-#     pelicula2 = ""
-#     pelicula3 = ""
+    st.write("Solicitud enviada: GRACIAS POR CONFIAR EN WEEKLUXE, BUEN DIA")
 
 #     # Obtén el diccionario de credenciales desde Streamlit secrets
 #     credentials_dict = st.secrets["gcp_service_account"]
