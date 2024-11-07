@@ -27,27 +27,37 @@ st.image("Imagenes/WEEKLUXE.jpg", width=300)
 #     st.write(pelicula2)
 #     st.write(pelicula3)
 
+st.title("Ingresar 3 películas")
+
 # Crear formulario
 with st.form("formulario"):
-    pelicula1 = st.text_input("Nombre película 1")
-    pelicula2 = st.text_input("Nombre película 2")
-    pelicula3 = st.text_input("Nombre película 3")
-    mail = st.text_input("Ingrese correo donde recibirá las recomendaciones")
+    pelicula1 = st.text_input("Nombre película 1", key="p1")
+    pelicula2 = st.text_input("Nombre película 2", key="p2")
+    pelicula3 = st.text_input("Nombre película 3", key="p3")
+    mail = st.text_input("Ingrese correo donde recibirá las recomendaciones", key="email")
     
     # Botón enviar
     enviado = st.form_submit_button("Enviar")
 
-
 if enviado:
+    # Mostrar valores antes de limpiar
+    st.write("Valores antes de limpiar:")
+    st.write(pelicula1, pelicula2, pelicula3, mail)
+    
     # Limpiar campos de texto
     st.write("Películas ingresadas")
+    
     # Volver a crear el formulario con valores vacíos
     with st.form("formulario"):
-        st.text_input("Nombre película 1", value="", key="p1")
-        st.text_input("Nombre película 2", value="", key="p2")
-        st.text_input("Nombre película 3", value="", key="p3")
-        st.text_input("Ingrese correo donde recibirá las recomendaciones", value="", key="email")
+        pelicula1 = st.text_input("Nombre película 1", value="", key="p1")
+        pelicula2 = st.text_input("Nombre película 2", value="", key="p2")
+        pelicula3 = st.text_input("Nombre película 3", value="", key="p3")
+        mail = st.text_input("Ingrese correo donde recibirá las recomendaciones", value="", key="email")
         
+    # Mostrar valores después de limpiar
+    st.write("Valores después de limpiar:")
+    st.write(pelicula1, pelicula2, pelicula3, mail)
+
 #     # Obtén el diccionario de credenciales desde Streamlit secrets
 #     credentials_dict = st.secrets["gcp_service_account"]
 
