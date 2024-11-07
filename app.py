@@ -27,23 +27,36 @@ st.image("Imagenes/WEEKLUXE.jpg", width=300)
 #     st.write(pelicula2)
 #     st.write(pelicula3)
 
-# Define form for input
+st.title("Ingresar 3 películas")
+
+# Función para restablecer los valores de los campos
+def reset_fields():
+    st.session_state["p1"] = ""
+    st.session_state["p2"] = ""
+    st.session_state["p3"] = ""
+    st.session_state["email"] = ""
+
+# Crear formulario para ingresar datos
 with st.form("formulario"):
     pelicula1 = st.text_input("Nombre película 1", key="p1")
     pelicula2 = st.text_input("Nombre película 2", key="p2")
     pelicula3 = st.text_input("Nombre película 3", key="p3")
     mail = st.text_input("Ingrese correo", key="email")
     
-    # Submit button
+    # Botón de envío
     enviado = st.form_submit_button("Enviar")
 
-# Display results if form is submitted
+# Mostrar resultados y limpiar campos si se hace clic en "Enviar"
 if enviado:
     st.write("Películas ingresadas:")
     st.write(f"Película 1: {pelicula1}")
     st.write(f"Película 2: {pelicula2}")
     st.write(f"Película 3: {pelicula3}")
     st.write(f"Correo: {mail}")
+
+# Botón de limpiar
+if st.button("Limpiar todo"):
+    reset_fields()
 
 #     # Obtén el diccionario de credenciales desde Streamlit secrets
 #     credentials_dict = st.secrets["gcp_service_account"]
