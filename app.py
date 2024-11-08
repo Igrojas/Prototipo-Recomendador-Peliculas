@@ -43,7 +43,7 @@ spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1T2H33PS-I0g0PhQyYblMr
 spreadsheet = client.open_by_url(spreadsheet_url)
 
 # --------------------------------------------------------- #
-worksheet_entrada = spreadsheet.worksheet("Entrada - ST")
+worksheet_entrada = spreadsheet.worksheet("Entradas - ST")
 
 pelicula_1 = pelicula1
 pelicula_2 = pelicula2
